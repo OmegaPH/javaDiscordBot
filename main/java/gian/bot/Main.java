@@ -21,7 +21,7 @@ public class Main {
                 .addListener(new Ping())
                 .addListener(new userInfo())
                 .addListener(new screamCommand())
-                .setToken("ODI0Njc4NDYzMzkwMzUxNDEw.YFy3qw.BlBhTkpQCcZAp5PXa2au4clUnGE")
+                .setToken(token.token)
                 .login()
                 .join();
         Bot.updateStatus(UserStatus.DO_NOT_DISTURB);
