@@ -12,9 +12,12 @@ public class Ping implements MessageCreateListener {
     public void onMessageCreate(MessageCreateEvent message) {
 
         if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "ping")){
-
+            message.getChannel().type();
             message.getChannel().sendMessage("Pong!");
 
+        } if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "pong")){
+            message.getChannel().type();
+            message.getChannel().sendMessage("You're supposed to say \"ping\" :V");
         }
 
     }
