@@ -6,6 +6,7 @@ import org.javacord.api.entity.message.MessageBuilder;
 import org.javacord.api.entity.message.MessageDecoration;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.entity.permission.Role;
+import org.javacord.api.entity.server.Server;
 import org.javacord.api.entity.user.User;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -19,17 +20,60 @@ import java.util.concurrent.TimeUnit;
 
 
 public class userInfo implements MessageCreateListener {
+
+
+
     @Override
     public void onMessageCreate(MessageCreateEvent infoEmbed) {
+        String displayName = String.valueOf(infoEmbed.getMessageAuthor().getDisplayName());
         String username = String.valueOf(infoEmbed.getMessageAuthor().getId());
         String displayID = String.valueOf(infoEmbed.getMessageAuthor().getId());
         String section = "abc";
+        String gender = "abc";
+        String userRoles = "abc";
+        String idkMsg = "I don't know you yet <(-_-)>";
+        String z = "Outsider";
+        User u = infoEmbed.getMessageAuthor().asUser().get();
+        List<Role> roles = infoEmbed.getServer().get().getRoles(u);
 
+        String output = "\n";
 
-        //username is the sender's display name, use this to detect and determine his or her real name.
-        if (username.equalsIgnoreCase("414362560909934592")) {
+        for (Role r : roles)
+            output += "\t[" + r.getName().replaceFirst("@", "") + "]\n";
+
+        if (infoEmbed.getMessageContent().equalsIgnoreCase(Main.Prefix + "who_test")){
+            infoEmbed.getChannel().sendMessage(output);
+
+        }
+        //register users here
+        if (username.equalsIgnoreCase("430621525654241300")) {
+            username = "Juan Miguel Soriano II";
+            section = "Descartes";
+            gender = "Male";
+            userRoles = output;
+
+        } else if (username.equalsIgnoreCase("414362560909934592")) {
             username = "Gian Carlo Sitchon";
             section = "Descartes";
+            gender = "Male";
+            userRoles = output;
+        } else if (username.equalsIgnoreCase("252334016395476995")) {
+            username = "Xandre Jover Duncan";
+            section = "Ptolemy";
+            gender = "Male";
+            userRoles = output;
+        } else if (username.equalsIgnoreCase("417281170494193665")) {
+            username = "Miguel Pingol";
+            section = "Ptolemy";
+            gender = "Male";
+            userRoles = output;
+        } else if (username.equalsIgnoreCase("403690866507513876")){
+            username = "Tristan Santos AKA Bato | Bats";
+            section = "Outsider (HAU)";
+            gender = "N/A";
+            userRoles = output;
+
+
         } else {
             username = "I don't know you yet <(-_-)>";
         }
@@ -38,28 +82,52 @@ public class userInfo implements MessageCreateListener {
 
 
 
-        EmbedBuilder embedBlue = new EmbedBuilder()
+        EmbedBuilder embedGreen = new EmbedBuilder()
                 .setTitle("Your Name is:")
                 .setDescription(username)
                 .setAuthor("Click me for fun!", "https://youtu.be/j8PxqgliIno", "https://cdn.discordapp.com/attachments/742762009778585631/824317577584836608/26220309_829115467259230_4833775892851768861_o.png")
-                .addField("Roles", "*still struggling to code user.getRoles.api* == !NULL")
-                .addInlineField("Gender", "Male")
+                .addField("Roles", userRoles)
+                .addInlineField("Gender", gender)
                 .addInlineField("Section", section )
-                .setColor(Color.BLUE)
+                .setColor(Color.GREEN)
                 .setFooter("Now you know who you are...", "https://cdn.discordapp.com/attachments/771182740024328235/825321716418215966/latest.png")
-                .setImage(new File("S:\\Pictures\\Pasted Image - 5.png"))
+                .setImage(new File("S:\\Documents\\Desktop Folder\\School Stuff\\Hope\\Event\\Lei\\Pto.png"))
                 .setThumbnail(infoEmbed.getMessageAuthor().getAvatar());
 
         EmbedBuilder embedRed = new EmbedBuilder()
                 .setTitle("Your Name is:")
                 .setDescription(username)
                 .setAuthor("Click me for fun!", "https://youtu.be/j8PxqgliIno", "https://cdn.discordapp.com/attachments/742762009778585631/824317577584836608/26220309_829115467259230_4833775892851768861_o.png")
-                .addField("Roles", "*still struggling to code user.getRoles.api* == !NULL")
-                .addInlineField("Gender", "Male")
+                .addField("Roles", userRoles)
+                .addInlineField("Gender", gender)
                 .addInlineField("Section", section )
                 .setColor(Color.RED)
                 .setFooter("Now you know who you are...", "https://cdn.discordapp.com/attachments/771182740024328235/825321716418215966/latest.png")
                 .setImage(new File("S:\\Pictures\\Pasted Image - 5.png"))
+                .setThumbnail(infoEmbed.getMessageAuthor().getAvatar());
+
+        EmbedBuilder embedGray = new EmbedBuilder()
+                .setTitle("Your Name is:")
+                .setDescription(username)
+                .setAuthor("Click me for fun!", "https://youtu.be/j8PxqgliIno", "https://cdn.discordapp.com/attachments/742762009778585631/824317577584836608/26220309_829115467259230_4833775892851768861_o.png")
+                .addField("Roles", userRoles)
+                .addInlineField("Gender", gender)
+                .addInlineField("Section", section )
+                .setColor(Color.GRAY)
+                .setFooter("Now you know who you are...", "https://cdn.discordapp.com/attachments/771182740024328235/825321716418215966/latest.png")
+                .setImage(new File("S:\\Pictures\\Pasted Image - 5.png"))
+                .setThumbnail(infoEmbed.getMessageAuthor().getAvatar());
+
+        EmbedBuilder embedBlack = new EmbedBuilder()
+                .setTitle("Your Name is:")
+                .setDescription(username)
+                .setAuthor("Click me for fun!", "https://youtu.be/j8PxqgliIno", "https://cdn.discordapp.com/attachments/742762009778585631/824317577584836608/26220309_829115467259230_4833775892851768861_o.png")
+                .addField("Roles", userRoles)
+                .addInlineField("Gender", gender)
+                .addInlineField("Section", section )
+                .setColor(Color.BLACK)
+                .setFooter("Now you know who you are...", "https://cdn.discordapp.com/attachments/771182740024328235/825321716418215966/latest.png")
+                .setImage(new File("S:\\Documents\\Desktop Folder\\School Stuff\\Hope\\Event\\Lei\\notICT.png"))
                 .setThumbnail(infoEmbed.getMessageAuthor().getAvatar());
 
 
@@ -70,25 +138,26 @@ public class userInfo implements MessageCreateListener {
         }
         if (infoEmbed.getMessageContent().equals(Main.Prefix + "WHO AM I?")) {
             //this next if statement is if the user have not registered yet
-            if (username.equalsIgnoreCase("I don't know you yet <(-_-)>")) {
+            if (username.equalsIgnoreCase(idkMsg)) {
                 infoEmbed.getChannel().type();
                 new MessageBuilder()
                         .append("Sorry, it seems like you haven't registered your ")
                         .append("Display ID", MessageDecoration.BOLD, MessageDecoration.ITALICS, MessageDecoration.UNDERLINE)
-                        .append(" to <@414362560909934592> .")
+                        .append(" to <@414362560909934592> yet.")
                         .appendCode("java", "Your current Display ID is: " + displayID)
                         .setEmbed(new EmbedBuilder()
-                                .setTitle("Please send your Display ID to ")
+                                .setTitle("Please send your Display ID to: ")
                                 .setThumbnail(new File("S:\\Documents\\Desktop Folder\\School Stuff\\Hope\\Event\\Lei\\Discord.png"))
-                                .setDescription("Beep, bop, boop!")
-                                .setColor(Color.cyan))
+                                .setDescription("*Beep, bop, boop!*")
+                                .addField(".", "*Sorry*, I'm just a bot missing some codes (|._.|)")
+                                .setColor(Color.MAGENTA))
                         .send(infoEmbed.getChannel());
             // if he or she is registered, this code runs:
-            } if ("I don't know you yet <(-_-)>" != username) {
+            } if (username != idkMsg) {
                 if (section.equalsIgnoreCase("Descartes")) {
 
                     infoEmbed.getChannel().type();
-                    infoEmbed.getChannel().sendMessage(embedBlue);
+                    infoEmbed.getChannel().sendMessage(embedGray); // Gray line
                     infoEmbed.getChannel().type();
                     new MessageBuilder()
                             .append("This is ")
@@ -97,13 +166,32 @@ public class userInfo implements MessageCreateListener {
                             .send(infoEmbed.getChannel());
                 } if (section.equalsIgnoreCase("galilei")){
                     infoEmbed.getChannel().type();
-                    infoEmbed.getChannel().sendMessage(embedRed);
+                    infoEmbed.getChannel().sendMessage(embedRed); //Red line
                     infoEmbed.getChannel().type();
                     new MessageBuilder()
                             .append("This is ")
                             .append("WHO", MessageDecoration.BOLD, MessageDecoration.ITALICS, MessageDecoration.UNDERLINE)
                             .append(" you are... ( '-')")
                             .send(infoEmbed.getChannel());
+                } if (section.equalsIgnoreCase("PTOlemy")){
+                    infoEmbed.getChannel().type();
+                    infoEmbed.getChannel().sendMessage(embedGreen); //Blue line
+                    infoEmbed.getChannel().type();
+                    new MessageBuilder()
+                            .append("This is ")
+                            .append("WHO", MessageDecoration.BOLD, MessageDecoration.ITALICS, MessageDecoration.UNDERLINE)
+                            .append(" you are... ( '-')")
+                            .send(infoEmbed.getChannel());
+                } if (section.contains(z)){
+                    infoEmbed.getChannel().type();
+                    infoEmbed.getChannel().sendMessage(embedBlack);
+                    infoEmbed.getChannel().type();
+                    new MessageBuilder()
+                            .append("This is ")
+                            .append("WHO", MessageDecoration.BOLD, MessageDecoration.ITALICS, MessageDecoration.UNDERLINE)
+                            .append(" you are... ( '-')")
+                            .send(infoEmbed.getChannel());
+
                 }
 
             }
