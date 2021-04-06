@@ -22,6 +22,7 @@ public class Main {
                 .addListener(new guessingGame())
                 .addListener(new roll())
                 .addListener(new modules())
+                .addListener(new notes())
                 .setToken(token.token)
                 .login()
                 .join();

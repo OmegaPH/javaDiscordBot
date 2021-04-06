@@ -10,7 +10,7 @@ import java.awt.*;
 import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
-public class modules implements MessageCreateListener {
+public class notes implements MessageCreateListener {
     //global
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
@@ -18,27 +18,25 @@ public class modules implements MessageCreateListener {
         String displayID = String.valueOf(event.getMessageAuthor().getId());
 
         EmbedBuilder KomPan = new EmbedBuilder()
-                .setTitle("KomPan Modules | Gng. Rosalina Molines")
-                .setDescription("Here are the modules that have been provided by Gng so far...")
-                .setAuthor("ICTHS Official Facebook Page", "https://www.facebook.com/ICTHS/", "https://cdn.discordapp.com/attachments/825351550545035285/828887019798659102/fb_icon_325x325.png")
-                .addField("__**1st Week**__", "```https://docs.google.com/document/d/1iwO3wIK7x2tY-xfCIkfHSgVLrftCesjLGUzK6pYrdIg/edit?usp=sharing``` \n For further notes type >notes")
-                .addField("__**2nd Week**__", "```https://docs.google.com/document/d/1mn6qLdRrMAo8aAHPGAB9ZDDH3pNtDGr10jwgp5DhtFE/edit?usp=sharing``` \n For further notes type >notes")
-                .addField("__**3rd Week**__", "```https://docs.google.com/document/d/1dU2qsMU2O-8b7Lfp6dKdjG4JyYn_5JrBUUPchbE2oZw/edit?usp=sharing``` \n For further notes type >notes")
-                .setColor(Color.white)
-                .setFooter("\"Inspiration is perishable, act now or it's already too late.\"", "https://cdn.discordapp.com/attachments/825351550545035285/826662170284392448/damnit.png")
+                .setTitle("KomPan Notes :zzz: ")
+                .setDescription("Here are the available notes for the subject __KomPan__")
+                .setAuthor("SHING", "https://www.youtube.com/watch?v=WDhkKeS4NfI", "https://cdn.discordapp.com/attachments/698520297585770536/828952303578251264/unknown.png")
+                .addField("__**1st & 2nd Week**__", "```https://docs.google.com/document/d/1iwO3wIK7x2tY-xfCIkfHSgVLrftCesjLGUzK6pYrdIg/edit?usp=sharing``` \n Courtesy of: **Unknown o.o**")
+                .setColor(Color.GREEN)
+                .setFooter("Thanks to the people who have contributed! Sipag niyo <:WOO:785916519775076393>", "https://cdn.discordapp.com/attachments/825351550545035285/826662170284392448/damnit.png")
                 .setThumbnail("https://cdn.discordapp.com/attachments/825351550545035285/828886063036366888/18157340_1595761667102559_3991239694797473256_n.png");
 
-        if (event.getMessageContent().equalsIgnoreCase(Main.Prefix + "modules")) {
+        if (event.getMessageContent().equalsIgnoreCase(Main.Prefix + "notes")) {
             event.getChannel().type();
-            event.getChannel().sendMessage("Hey there <@" + displayID + ">, you are currently asking for the modules of what subject?");
+            event.getChannel().sendMessage(":notepad_spiral: ||Notes for the 2nd Sem of ICTHS||");
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            event.getChannel().sendMessage("*Here are the list of subjects available on my database:*\n```1) KomPan```");
+            event.getChannel().sendMessage("*I have collected notes for the following subjects, pick one to study!*\n```1) KomPan```");
             try {
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -59,7 +57,7 @@ public class modules implements MessageCreateListener {
 
                         } else if (String.valueOf(event.getMessageContent()) != String.valueOf(options)) {
                             event.getChannel().type();
-                            event.getChannel().sendMessage("> Option not found...\n>>> Please call the command >modules again and select a valid option." );
+                            event.getChannel().sendMessage("> Option not found...\n>>> Please call the command >notes again and select a valid option." );
                             lm[0].remove();
 
                         }
