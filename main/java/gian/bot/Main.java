@@ -1,17 +1,10 @@
 package gian.bot;
 
-import gian.bot.commands.Ping;
-import gian.bot.commands.additionGame;
-import gian.bot.commands.screamCommand;
-import gian.bot.commands.userInfo;
+import gian.bot.commands.*;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.activity.ActivityType;
-import org.javacord.api.entity.message.MessageBuilder;
-import org.javacord.api.entity.message.MessageDecoration;
 import org.javacord.api.entity.user.UserStatus;
-
-import java.util.Random;
 
 public class Main {
 
@@ -24,13 +17,16 @@ public class Main {
         DiscordApi Bot = new DiscordApiBuilder() // note: listeners first before login and join to avoid Webpacket error
                 .addListener(new Ping())
                 .addListener(new userInfo())
-                .addListener(new screamCommand())
                 .addListener(new additionGame())
+                .addListener(new markDown())
+                .addListener(new guessingGame())
+                .addListener(new roll())
+                .addListener(new modules())
                 .setToken(token.token)
                 .login()
                 .join();
-        Bot.updateStatus(UserStatus.DO_NOT_DISTURB);
-        Bot.updateActivity(ActivityType.WATCHING, "Tristan Santos");
+        Bot.updateStatus(UserStatus.ONLINE);
+        Bot.updateActivity(ActivityType.WATCHING, "Tristan Santos get clapped");
 
 
         System.out.println("Bot is active!");
