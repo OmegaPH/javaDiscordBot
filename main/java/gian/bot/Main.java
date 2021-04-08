@@ -6,6 +6,8 @@ import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.activity.ActivityType;
 import org.javacord.api.entity.user.UserStatus;
 
+import java.util.Date;
+
 public class Main {
 
     public static String Prefix = ">";
@@ -23,6 +25,8 @@ public class Main {
                 .addListener(new roll())
                 .addListener(new modules())
                 .addListener(new notes())
+                .addListener(new version())
+                .addListener(new Purge())
                 .setToken(token.token)
                 .login()
                 .join();
