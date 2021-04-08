@@ -124,9 +124,7 @@ public class modules implements MessageCreateListener {
                                 e.printStackTrace();
                             }
                             event.getChannel().getMessages(7).thenCompose(MessageSet::deleteAll).exceptionally(ExceptionLogger.get());
-                            event.getChannel().sendMessage("Conversation with <@" + displayID + "> have been swept under the rug :eyes:");
                             event.getChannel().type();
-                            event.getChannel().sendMessage("This transaction will be deleted in __**15**__ seconds to avoid confusion for future updates on my data. <:PAMPANGASBEST:785916602277298187>");
                             event.getChannel().sendMessage("Conversation with <@" + displayID + "> have been swept under the rug :eyes:");
                             lm[0].remove();
 

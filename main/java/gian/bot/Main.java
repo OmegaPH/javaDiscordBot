@@ -27,6 +27,7 @@ public class Main {
                 .addListener(new notes())
                 .addListener(new version())
                 .addListener(new Purge())
+                .addListener(new commands())
                 .setToken(token.token)
                 .login()
                 .join();

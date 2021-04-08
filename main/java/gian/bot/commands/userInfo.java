@@ -35,7 +35,6 @@ public class userInfo implements MessageCreateListener {
         String z = "Outsider";
         User u = infoEmbed.getMessageAuthor().asUser().get();
         List<Role> roles = infoEmbed.getServer().get().getRoles(u);
-
         String output = "\n";
 
         for (Role r : roles)
@@ -67,12 +66,22 @@ public class userInfo implements MessageCreateListener {
             section = "Ptolemy";
             gender = "Male";
             userRoles = output;
-        } else if (username.equalsIgnoreCase("403690866507513876")){
+        } else if (username.equalsIgnoreCase("403690866507513876")) {
             username = "Tristan Santos AKA Bato | Bats";
             section = "Outsider (HAU)";
             gender = "N/A";
             userRoles = output;
 
+        } else if (username.equalsIgnoreCase("399878841545392148")) {
+            username = "Dean Andrei Palma";
+            section = "Galilei";
+            gender = "Male";
+            userRoles = output;
+        } else if (username.equalsIgnoreCase("582758619045691393")) {
+            username = "Justine Torres Gueverra";
+            section = "Descartes";
+            gender = "Male";
+            userRoles = output;
 
         } else {
             username = "I don't know you yet <(-_-)>";
@@ -103,7 +112,7 @@ public class userInfo implements MessageCreateListener {
                 .addInlineField("Section", section )
                 .setColor(Color.RED)
                 .setFooter("Now you know who you are...", "https://cdn.discordapp.com/attachments/771182740024328235/825321716418215966/latest.png")
-                .setImage(new File("S:\\Pictures\\Pasted Image - 5.png"))
+                .setImage(new File("S:\\Downloads\\gal.png"))
                 .setThumbnail(infoEmbed.getMessageAuthor().getAvatar());
 
         EmbedBuilder embedGray = new EmbedBuilder()
