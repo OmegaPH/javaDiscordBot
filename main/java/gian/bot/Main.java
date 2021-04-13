@@ -6,14 +6,11 @@ import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.activity.ActivityType;
 import org.javacord.api.entity.user.UserStatus;
 
-import java.util.Date;
-
 public class Main {
 
     public static String Prefix = ">";
-
+    public static long start = System.currentTimeMillis();
     public static void main(String[] args) {
-
 
 
         DiscordApi Bot = new DiscordApiBuilder() // note: listeners first before login and join to avoid Webpacket error
