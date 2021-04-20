@@ -1,4 +1,4 @@
-package gian.bot.commands;
+package gian.bot.commands.school;
 
 import gian.bot.Main;
 import org.javacord.api.entity.message.MessageSet;
@@ -49,10 +49,11 @@ public class notes implements MessageCreateListener {
 
         EmbedBuilder KomPan = new EmbedBuilder()
                 .setTitle("> KomPan Notes :notepad_spiral: ")
-                .setDescription("Here are the available notes for the subject __KomPan__\n ||Updated 04/12/2021||")
+                .setDescription("Here are the available notes for the subject __KomPan__\n ||Updated 04/19/2021||")
                 .setAuthor("SHING", "https://www.youtube.com/watch?v=WDhkKeS4NfI", "https://cdn.discordapp.com/attachments/698520297585770536/828952303578251264/unknown.png")
                 .addField("__**1st & 2nd Week**__", "```https://docs.google.com/document/d/1w2WCGH8Y6UEVBDGcLuklKoy2SVR2unt3OBKU1GxQ1_M/edit``` [Click here for the alternative link](<https://docs.google.com/document/d/1w2WCGH8Y6UEVBDGcLuklKoy2SVR2unt3OBKU1GxQ1_M/edit>)\nCourtesy of: **Unknown o.o**")
                 .addField("__**3rd Week (Baryti ng Wika)**__", "```https://drive.google.com/file/d/1598Bnlwc91ssFzn5z6D2gO42HU0ZEACV/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1598Bnlwc91ssFzn5z6D2gO42HU0ZEACV/view?usp=sharing>)\nCourtesy of: **blank**")
+                .addField("__**4th Week (Functions and Ways of Language)**__", "```https://drive.google.com/file/d/1iXOqYFmKltEDnEQcixBMT-_ugS29-70P/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1iXOqYFmKltEDnEQcixBMT-_ugS29-70P/view?usp=sharing>)\nCourtesy of: **blank**")
                 .addField("\n. ", " . ")
                 .setColor(Color.GREEN)
                 .setFooter("Thanks to the people who have contributed! Sipag niyo ;)", "https://cdn.discordapp.com/attachments/825351550545035285/826662170284392448/damnit.png")
@@ -60,10 +61,11 @@ public class notes implements MessageCreateListener {
 
         EmbedBuilder OralCom = new EmbedBuilder()
                 .setTitle("> Oral Communiation notes :notepad_spiral: ")
-                .setDescription("Here are the available notes for the subject __Oral Communication__\n ||Updated 04/13/2021||")
+                .setDescription("Here are the available notes for the subject __Oral Communication__\n ||Updated 04/20/2021||")
                 .setAuthor("SHING", "https://www.youtube.com/watch?v=WDhkKeS4NfI", "https://cdn.discordapp.com/attachments/698520297585770536/828952303578251264/unknown.png")
                 .addField("__**1st Lesson**__", "```https://drive.google.com/file/d/1Sb3gr8AMr-csOfN3U41S7Su93g-bvRu8/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1Sb3gr8AMr-csOfN3U41S7Su93g-bvRu8/view?usp=sharing>)\nCourtesy of: **blank**")
                 .addField("__**3rd Lesson (Communication Models)**__", "```https://drive.google.com/file/d/1U3KKKORrCMLG9-h753qccnBSeYGDfLUC/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1U3KKKORrCMLG9-h753qccnBSeYGDfLUC/view?usp=sharing>)\nCourtesy of: **blank**")
+                .addField("__**4th Week (Dimensions and Barriers)**__", "```https://drive.google.com/file/d/17odotyiKGyBMkic9fe8tgAFlIRxu6qqr/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/17odotyiKGyBMkic9fe8tgAFlIRxu6qqr/view?usp=sharing>)\nCourtesy of: **blank**")
                 .addField("\n. ", " . ")
                 .setColor(Color.GREEN)
                 .setFooter("Thanks to the people who have contributed! Sipag niyo ;)", "https://cdn.discordapp.com/attachments/825351550545035285/826662170284392448/damnit.png")
@@ -75,6 +77,7 @@ public class notes implements MessageCreateListener {
                 .setAuthor("SHING", "https://www.youtube.com/watch?v=WDhkKeS4NfI", "https://cdn.discordapp.com/attachments/698520297585770536/828952303578251264/unknown.png")
                 .addField("__**1st & 2nd Lesson**__", "```https://drive.google.com/file/d/1sy42TH7SjngZjgVTpo1jHnZE7NTZ77X_/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1sy42TH7SjngZjgVTpo1jHnZE7NTZ77X_/view?usp=sharing>)\nCourtesy of: **blank**")
                 .addField("__**3rd Lesson (Variance & Standard Deviation)**__", "```https://drive.google.com/file/d/1DHXvyZgCAQgcpKYbc9-iZPRklXv9woTZ/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1DHXvyZgCAQgcpKYbc9-iZPRklXv9woTZ/view?usp=sharing>)\nCourtesy of: **blank**")
+                .addField("__**Week 4 (Z-score and more)**__", "```https://drive.google.com/file/d/1O6rRxqco_q1cZ97IPoCS7FxMYsS-uNL4/view?usp=sharing``` [Click here for the alternative link](<https://drive.google.com/file/d/1O6rRxqco_q1cZ97IPoCS7FxMYsS-uNL4/view?usp=sharing>)\nCourtesy of: **blank**")
                 .addField("\n. ", " . ")
                 .setColor(Color.cyan)
                 .setFooter("Thanks to the people who have contributed! Sipag niyo ;)", "https://cdn.discordapp.com/attachments/825351550545035285/826662170284392448/damnit.png")

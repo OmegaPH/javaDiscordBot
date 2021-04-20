@@ -4,6 +4,9 @@ import gian.bot.commands.*;
 import gian.bot.commands.guessGame.guessReadNLB;
 import gian.bot.commands.guessGame.guessWrite;
 import gian.bot.commands.guessGame.guessingGame;
+import gian.bot.commands.school.Notes_announce_update;
+import gian.bot.commands.school.modules;
+import gian.bot.commands.school.notes;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.activity.ActivityType;
@@ -24,11 +27,13 @@ public class Main {
                 .addListener(new roll())
                 .addListener(new modules())
                 .addListener(new notes())
+                .addListener(new Notes_announce_update())
                 .addListener(new version())
                 .addListener(new Purge())
                 .addListener(new commands())
                 .addListener(new guessWrite())
                 .addListener(new guessReadNLB())
+                .addListener(new welcome())
                 .setToken(token.token)
                 .login()
                 .join();
